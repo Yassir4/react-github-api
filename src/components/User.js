@@ -6,19 +6,26 @@ class User extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: ''
+            data: '',
+            display_data: false
         }
     }
-
+    componentDidUpdate(prevProps,prevState){
+        if(prevProps.user.name !== this.props.user.name){
+            this.setState({
+                display_data: false
+            })
+          }
+    }
     getUserData = (event, data) => {
         this.setState({
-            data: data
+            data: data,
+            display_data: true
         })
-        // console.log(this.props.user)
     }
     render() {
         let user_data = ''
-        if (this.state.data) {
+        if (this.state.data && this.state.display_data) {
             user_data = <UserData data={this.state.data} />
         }
         return (
@@ -28,7 +35,7 @@ class User extends React.Component {
                 <p className='user-bio'>{this.props.user.bio}</p>
                 <div className="user-data">
                     <div className='user-following'
-                        onClick={(event) => this.getUserData(event, `/${this.props.user.url}/following`)} >
+                        onClick={(event) => this.getUserData(event, `${this.props.user.url}/following`)} >
                         <b>{this.props.user.following}</b>
                         <p>Following</p>
                     </div>
