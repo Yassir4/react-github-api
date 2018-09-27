@@ -10,19 +10,22 @@ class User extends React.Component {
             display_data: false
         }
     }
-    componentDidUpdate(prevProps,prevState){
-        if(prevProps.user.name !== this.props.user.name){
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.user.name !== this.props.user.name) {
             this.setState({
                 display_data: false
             })
-          }
+        }
     }
     getUserData = (event, data) => {
-        this.setState({
-            data: data,
-            display_data: true
-        })
+        setTimeout(() => {
+            this.setState({
+                data: data,
+                display_data: true
+            })
+        }, 1500);
     }
+
     render() {
         let user_data = ''
         if (this.state.data && this.state.display_data) {
