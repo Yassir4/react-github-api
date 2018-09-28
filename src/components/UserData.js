@@ -73,11 +73,12 @@ class UserData extends React.Component {
         }
         return (
             <div>
+                <hr/>
                 <InfiniteScroll
                     dataLength={this.state.data.length}
                     next={this.fetchMoreData}
                     hasMore={this.state.hasMore}
-                    loader={<h4>Loading...</h4>}
+                    loader={<Loading />}
                     endMessage={
                         <p style={{ textAlign: "center" }}>
                             <b>Yay! You have seen it all</b>
@@ -87,7 +88,7 @@ class UserData extends React.Component {
                     {this.state.loading === true
                         ? <Loading />
                         :
-                        <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
+                        <ul>
                             {this.state.data.map(({ id, login, avatar_url, html_url }) => (
 
                                 <li key={id} style={{ margin: 30 }}>
@@ -96,14 +97,13 @@ class UserData extends React.Component {
                                         <li>@{avatar_url}</li>
                                     </ul>
                                 </li>
-                           
-                        ))}
-                    </ul>
+                            ))}
+                        </ul>
                     }
-                    </InfiniteScroll>
+                </InfiniteScroll>
             </div>
-                )
-            }
-        }
-        
+        )
+    }
+}
+
 export default UserData

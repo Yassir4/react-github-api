@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import './User.css'
-// import { BrowserRouter, Route, Link } from 'react-router-dom'
+import './UserCard.css'
 import UserData from './UserData'
 class User extends React.Component {
     constructor(props) {
@@ -33,17 +32,29 @@ class User extends React.Component {
         }
         return (
             <div className='user-profile'>
-                <img className='user-img' src={'' + this.props.user.avatar_url} alt="" />
-                <h3 className='user-name'>{this.props.user.name}</h3>
-                <p className='user-bio'>{this.props.user.bio}</p>
-                <div className="user-data">
-                    <div className='user-following'
-                        onClick={(event) => this.getUserData(event, `${this.props.user.url}/following`)} >
-                        <b>{this.props.user.following}</b>
-                        <p>Following</p>
+                <div className="user-profile-grid">
+                    <div className='user-img'>
+                        <img className='user-img' src={'' + this.props.user.avatar_url} alt="" />
                     </div>
+                    <div className="profile-user-settings">
+                        <h1 className='user-name'>{this.props.user.name}</h1>
+                        <a className="btn-visit" href={this.props.user.html_url} >Visit Profile</a>
+                    </div>
+                    <div className="user-bio">
+                        <p className='user-bio'>{this.props.user.bio}</p>
+                    </div>
+                    <div className="user-stats">
+                        <ul>
+                            <li className='user-following'
+                                onClick={(event) => this.getUserData(event, `${this.props.user.url}/following`)} >
+                                <b>{this.props.user.following}</b>
+                                <p>Following</p>
+                            </li>
+                        </ul>
+
+                    </div>
+                    {user_data}
                 </div>
-                {user_data}
             </div>
         )
     }

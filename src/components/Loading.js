@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './Loading.css'
 export default function Loading(){
-    return <h4>Loading</h4>
+    return <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 }
