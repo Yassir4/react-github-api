@@ -2,8 +2,7 @@ import React from 'react'
 import Loading from './Loading'
 import './UserData.css'
 import UserDataList from './UserDataList'
-import InfiniteScroll from "react-infinite-scroll-component";
-
+import InfiniteScroll from "react-infinite-scroll-component"
 class UserData extends React.Component {
     constructor(props) {
         super(props)

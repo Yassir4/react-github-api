@@ -1,18 +1,18 @@
-// this Component receive the user repos and the repos starred by the user
+// this Component display the user repos or the user follow 
 import React from 'react'
-
 function UserReposList(props) {
     return (
         <ul >
             {props.data.map(({ id, full_name, stargazers_count, html_url }) => (
-
-                <li key={id} className='repos-list'>
-                    <h3><a className='user-repos-name' href={html_url}>{full_name}</a></h3>
-                    <div className='user-repos-stars'>
-                        <i class="fas fa-star"></i>
-                        {stargazers_count}
-                    </div>
-                </li>
+                
+                    <li key={id} className='repos-list'>
+                        <h3><a className='user-repos-name' href={html_url}>{full_name}</a></h3>
+                        <div className='user-repos-stars'>
+                            <i class="fas fa-star"></i>
+                            {stargazers_count}
+                        </div>
+                    </li>
+                
             ))}
         </ul>
     )
@@ -21,7 +21,6 @@ function UserFollowList(props) {
     return (
         <ul>
             {props.data.map(({ id, login, avatar_url, html_url }) => (
-
                 <li key={id}>
                     <img className='user-data-img' src={avatar_url} alt="" />
                     <h3><a className='user-data-login' href={html_url}>{login}</a></h3>

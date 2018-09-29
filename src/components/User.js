@@ -49,7 +49,7 @@ class User extends React.Component {
                             <li className='user-followers'
                                 onClick={(event) => this.getUserData(event, `${this.props.user.url}/followers`)} >
                                 <b>{this.props.user.followers}</b>
-                                <p>Following</p>
+                                <p>Followers</p>
                             </li>
                             <li className='user-repos'
                                 onClick={(event) => this.getUserData(event, `${this.props.user.url}/repos`)} >
@@ -59,7 +59,8 @@ class User extends React.Component {
                         </ul>
 
                     </div>
-                    {user_data}
+                   
+                        {user_data}
                 </div>
             </div>
         )
