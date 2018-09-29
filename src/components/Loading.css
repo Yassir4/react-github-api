@@ -1,8 +1,10 @@
 .lds-ring {
     display: inline-block;
-    position: relative;
+    /* position: absolute; */
     width: 64px;
     height: 64px;
+    top: 35%;
+    left: 50%;
   }
   .lds-ring div {
     box-sizing: border-box;
@@ -11,10 +13,10 @@
     width: 51px;
     height: 51px;
     margin: 6px;
-    border: 6px solid red;
+    border: 6px solid #00688B;
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: red transparent transparent transparent;
+    border-color: #00688B transparent transparent transparent;
   }
   .lds-ring div:nth-child(1) {
     animation-delay: -0.45s;

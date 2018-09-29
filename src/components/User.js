@@ -9,20 +9,16 @@ class User extends React.Component {
             display_data: false
         }
     }
-    componentDidUpdate(prevProps, prevState) {
-        if (prevProps.user.name !== this.props.user.name) {
-            this.setState({
-                display_data: false
-            })
-        }
-    }
     getUserData = (event, data) => {
+        this.setState({
+            display_data: false
+        })
         setTimeout(() => {
             this.setState({
                 data: data,
                 display_data: true
             })
-        }, 1500);
+        }, 500);
     }
 
     render() {
@@ -49,6 +45,16 @@ class User extends React.Component {
                                 onClick={(event) => this.getUserData(event, `${this.props.user.url}/following`)} >
                                 <b>{this.props.user.following}</b>
                                 <p>Following</p>
+                            </li>
+                            <li className='user-followers'
+                                onClick={(event) => this.getUserData(event, `${this.props.user.url}/followers`)} >
+                                <b>{this.props.user.followers}</b>
+                                <p>Following</p>
+                            </li>
+                            <li className='user-repos'
+                                onClick={(event) => this.getUserData(event, `${this.props.user.url}/repos`)} >
+                                <b>{this.props.user.public_repos}</b>
+                                <p>Repos</p>
                             </li>
                         </ul>
 

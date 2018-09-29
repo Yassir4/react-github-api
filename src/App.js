@@ -8,7 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       user: '',
-      loading: true
+      loading: false
     }
   }
   getUser = () => {
@@ -16,7 +16,9 @@ class App extends Component {
       loading: true
     })
     const name = this.refs.name.value;
-    fetch(`http://api.github.com/users/${name}`)
+
+    setTimeout( () => {
+      fetch(`http://api.github.com/users/${name}`)
       .then(response => response.json())
       .then(data => {
 
@@ -25,16 +27,16 @@ class App extends Component {
           loading: false
         });
       })
+    },1000)
   }
-  render() {
-  //  if( this.state.loading === true)  return < Loading />
-  //   const name = this.state.user.name 
-  //   let userProfile;
-  //   if(this.state.loading === true) {
-      
-  //     if (name ) {
-  //     userProfile = <User user={this.state.user} />
-  //   }
+  render() {   
+    const name = this.state.user.name 
+    let userProfile;
+    if( this.state.loading === true)  {
+       userProfile = <div className='loading-user-card'><Loading /></div>
+    }else if (name ) {
+      userProfile = <User user={this.state.user} />
+    }
     return (
       <div className="App">
         <Header />

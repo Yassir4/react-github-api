@@ -1,15 +1,20 @@
+div.loading-user-card{
+    margin-top: 40px;
+    grid-row: 3/4;
+    grid-column: 1 / 4;
+}
+
 .user-profile{
     grid-row: 3/4;
     grid-column: 1 / 4
 }
-
-
 div.user-profile-grid{
     margin: 52px;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(4, auto);
     grid-column-gap: 3rem;
+    grid-row-gap: 10px;
     align-items: center;
 }
 div.user-bio{
@@ -28,8 +33,16 @@ div.profile-user-settings {
     grid-row: 1 / 2;
     grid-column: 2 / 3;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    max-width: 500px;
+}
+h1.user-name{
+    flex: 1;  
+    text-align: left;
+    
+}
+a.btn-visit{
+    flex: 2;
+    width: 50px;
 }
 div.user-stats{
     grid-row: 2 / 3;
@@ -40,9 +53,11 @@ div.user-stats ul{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    
 }
 div.user-stats ul li{
     margin-bottom: 10px;
+    margin-right: 35px;
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
@@ -51,6 +66,7 @@ div.user-stats ul li{
 	transition: all 200ms ease;
     position: relative;
     padding: 2px;
+
     /* transition: all ease-in-out .2s; */
 }
 div.user-stats ul li:hover {
@@ -73,11 +89,12 @@ h1{
     color: #707070;
     padding: 10px 40px;
     overflow: hidden;
-    max-width: 200px;
+    max-width: 100px;
     color: #262626; 
     text-decoration: none; 
     margin-top: 2px;
     margin-left: 15px;
+    align-self: center
 }
 .profile-stats{
     grid-row: 1 /2 ;
