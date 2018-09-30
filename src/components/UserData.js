@@ -98,11 +98,6 @@ class UserData extends React.Component {
                     next={this.fetchMoreData}
                     hasMore={this.state.hasMore}
                     loader={<div className='user-data-scrolling-loading'><Loading /></div>}
-                    endMessage={
-                        <p style={{ textAlign: "center" }}>
-                            <b>Yay! You have seen it all</b>
-                        </p>
-                    }
                 >
                     {this.state.loading === true
                         ? <Loading />

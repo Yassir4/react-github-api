@@ -57,3 +57,25 @@ div.wrapper{
 .searchButton i{
   font-size: 20px;
 }
+
+
+@media only screen and (max-width: 650px) {
+  .App {
+    overflow: hidden;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 70px auto;
+    grid-template-columns: 2px 1fr 2px;
+    grid-row-gap: 2em;
+  }
+  div.wrapper {
+    margin-right: 10%;
+}
+  #header h1{
+    width: auto;
+    grid-column: 1/4;
+  }
+  div#search-bar {
+   /* width: 80%; */
+  }
+}
