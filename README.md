@@ -5,7 +5,7 @@ As we all know the best way to learn is to practice practice practice .
 This is a  react-github app that allow you to search users and view their profiles(following, followers , repos) 
 
 Feel free to open issues for questions or improvements 
-![alt-text]() 
+![alt-text](https://github.com/Yassir4/react-github-api/blob/master/react-github-search.gif) 
 ## Getting Started
 
 First, clone the repo
