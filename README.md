@@ -17,7 +17,7 @@ $ git remote add origin https://github.com/Yassir4/react-github-api.git
 Next, load all the dependencies  
 
 ```
-$ cd todo-app
+$ cd react-github-api
 $ npm install
 ``` 
 Finally, run the node server with
